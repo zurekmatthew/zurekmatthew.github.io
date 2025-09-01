@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <title>$title$</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>html{scroll-behavior:smooth}</style>
+</head>
+<body>
+  <a id="top"></a>
+
+  <header class="site-header">
+    $if(site_title)$
+    <a class="site-title" href="index.html#top">$site_title$</a>
+    $endif$
+    <nav class="nav">
+      <a href="index.html#top">Home</a>
+      <a href="index.html#papers">Papers</a>
+      <a href="index.html#teaching">Teaching</a>
+      <!--
+      <a href="notes.html">Notes</a>
+      -->
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false" aria-label="Toggle dark mode">🌙</button>
+    </nav>
+  </header>
+
+  <main>
+    $body$
+  </main>
+
+  <footer>
+    <small>© $date$</small>
+  </footer>
+
+  <script>
+  (() => {
+    const KEY = 'theme'; // 'light' | 'dark'
+    const html = document.documentElement;
+    const btn = document.getElementById('theme-toggle');
+    const mq = window.matchMedia('(prefers-color-scheme: dark)');
+
+    const apply = (theme) => {
+      if (theme) {
+        html.setAttribute('data-theme', theme);
+        btn.setAttribute('aria-pressed', theme === 'dark');
+        btn.textContent = theme === 'dark' ? '☀️' : '🌙';
+      } else {
+        html.removeAttribute('data-theme'); // fall back to system
+        const sysDark = mq.matches;
+        btn.setAttribute('aria-pressed', sysDark);
+        btn.textContent = sysDark ? '☀️' : '🌙';
+      }
+    };
+
+    // Initial load: user choice > system
+    const stored = localStorage.getItem(KEY);
+    apply(stored);
+
+    // Toggle on click
+    btn.addEventListener('click', () => {
+      const current = html.getAttribute('data-theme'); // null => using system
+      const next = current ? (current === 'dark' ? 'light' : 'dark')
+                           : (mq.matches ? 'light' : 'dark');
+      localStorage.setItem(KEY, next);
+      apply(next);
+    });
+
+    // If user hasn't chosen, follow system changes
+    mq.addEventListener('change', () => {
+      if (!localStorage.getItem(KEY)) apply(null);
+    });
+  })();
+  </script>
+</body>
+</html>

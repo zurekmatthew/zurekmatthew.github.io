@@ -1,0 +1,168 @@
+/* === Site theme variables ================================================== */
+/* Light theme = default */
+:root{
+    --max: 900px;                  /* content column width */
+    --fg: #111111;                 /* text color */
+    --muted: #6b7280;              /* secondary text */
+    --link: #1d4ed8;               /* links & accents */
+    --bg: #ffffff;                 /* page background */
+    --card: #f8fafc;               /* soft card background */
+    --border: #e5e7eb;             /* subtle borders */
+    --anchor-offset: 88px;         /* space for sticky header when jumping to anchors */
+    color-scheme: light;           /* form controls, scrollbars, etc. */
+  }
+  
+  /* User-chosen dark theme (set via <html data-theme="dark">) */
+  :root[data-theme="dark"]{
+    --fg: #e5e7eb;
+    --muted: #9ca3af;
+    --link: #60a5fa;
+    --bg: #0b0f14;
+    --card: #111827;
+    --border: #1f2937;
+    color-scheme: dark;
+  }
+  
+  /* System dark default when user hasn't chosen a theme yet */
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme]){
+      --fg: #e5e7eb;
+      --muted: #9ca3af;
+      --link: #60a5fa;
+      --bg: #0b0f14;
+      --card: #111827;
+      --border: #1f2937;
+      color-scheme: dark;
+    }
+  }
+  
+  /* === Base & layout ========================================================= */
+  *{ box-sizing: border-box; }
+  html, body{ margin: 0; padding: 0; }
+  html{ scroll-behavior: smooth; }
+  
+  body{
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Ubuntu, Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--fg);
+    background: var(--bg);
+  }
+  
+  /* === Sticky header / navbar =============================================== */
+  .site-header{
+    position: sticky; top: 0; z-index: 1000;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: .75rem 1rem;
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+  }
+  
+  .site-title{
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--fg);
+    font-size: 1.15rem;
+  }
+  
+  nav.nav{
+    display: flex;
+    gap: .75rem;
+    flex-wrap: wrap;
+  }
+  
+  nav.nav a{
+    color: var(--link);
+    text-decoration: none;
+    padding: .25rem .5rem;
+    border-radius: .5rem;
+  }
+  
+  nav.nav a:hover{
+    background: var(--card);
+  }
+  
+  /* Theme toggle button (optional) */
+  .theme-toggle{
+    border: 1px solid var(--border);
+    background: transparent;
+    border-radius: .5rem;
+    padding: .25rem .5rem;
+    cursor: pointer;
+    font: inherit;
+    line-height: 1;
+  }
+  .theme-toggle:hover{ background: var(--card); }
+  
+  /* === Content =============================================================== */
+  main{
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 1rem 3rem;
+  }
+  
+  h1{ font-size: 2rem; margin: 1rem 0 .5rem; }
+  h2{ font-size: 1.35rem; margin: 1.25rem 0 .5rem; }
+  p{ margin: .5rem 0 1rem; }
+  
+  /* Nicer anchor landings under the sticky header */
+  section{ scroll-margin-top: var(--anchor-offset); }
+  
+  /* Publications list “cards” */
+  ol.pubs{ padding-left: 1.25rem; }
+  ol.pubs li{
+    margin: .75rem 0;
+    padding: .5rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: .75rem;
+  }
+  
+  .links a{ margin-right: .5rem; }
+  
+  /* Footer */
+  footer{
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 1rem;
+    color: var(--muted);
+  }
+
+  .headshot{
+    float: left;
+    width: 160px;          /* make it larger (try 160–200px) */
+    height: auto;
+    border-radius: 0;      /* square corners */
+    margin: 0 1.25rem .75rem 0;
+    border: 1px solid var(--border);
+    object-fit: cover;     /* crops nicely if the image isn’t perfectly square */
+  }
+
+
+  /* Make the Papers section start below the floated headshot */
+  h2#papers { clear: both; }
+
+  /* If you ever enable Pandoc --section-divs, these cover that case too */
+  section#papers, div#papers { clear: both; }
+
+
+
+  /* === Responsive ============================================================ */
+  @media (max-width: 640px){
+    .site-header{
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .headshot{
+      float: none;
+      display: block;
+      margin: 0 auto 1rem;
+      width: 140px;        /* slightly smaller on mobile; adjust to taste */
+    }
+    
+  }
+  
