@@ -5,7 +5,7 @@ title: Matthew Zurek
 # Matthew Zurek
 ![](headshot.jpg){.headshot}
 
-I am a CS PhD candidate at the University of Wisconsin–Madison. My research focuses on theoretical principles of reinforcement learning. I am also interested more broadly in optimization and statistics. I am very fortunate to be advised by Yudong Chen.
+I am a CS PhD candidate at the University of Wisconsin--Madison. My research focuses on theoretical principles of reinforcement learning. I am also interested more broadly in optimization and statistics. I am very fortunate to be advised by Yudong Chen.
 
 ## Papers {#papers}
 (* denotes equal contribution)

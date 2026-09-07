@@ -6,7 +6,7 @@ HTML  := $(PAGES:%=%.html)
 all: $(HTML)
 
 %.html: pages/%.md template.html assets/css/style.css
-	DATE=$$(git log -1 --format=%cs -- $< 2>/dev/null || date +%Y-%m-%d); \
+	DATE=$$(date +%Y-%m-%d); \
 	pandoc --standalone \
 	  --from markdown \
 	  --to html5 \
