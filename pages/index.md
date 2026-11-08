@@ -9,10 +9,17 @@ I am a CS PhD candidate at the University of Wisconsin--Madison. My research foc
 
 ## Papers {#papers}
 (* denotes equal contribution)
-
-1. **Optimality of a Threshold Policy for a Queueing System with One Fast Server and Two Identical Slow Servers**  
-  Weina Wang, Taha Ameen, Yudong Chen, Yige Hong, Josh Nichols, & Matthew Zurek.  
+1. **Closing the Log Gap: Minimax-Optimal Regret for Episodic RL**  
+  Guy Zamir, Victor Boone, Matthew Zurek, & Yudong Chen.  
   Preprint, 2026.  
+  [arxiv](https://arxiv.org/abs/2610.40165)
+2. **Game-Theoretic Foundations for Undiscounted Bisimulation Metrics**  
+  Matthew Zurek, Yudong Chen, & Josiah P. Hanna.  
+  Preprint, 2026.  
+  [arxiv](https://arxiv.org/abs/2610.38313)
+2. **Optimality of a Threshold Policy for a Queueing System with One Fast Server and Two Identical Slow Servers**  
+  Weina Wang, Taha Ameen, Yudong Chen, Yige Hong, Josh Nichols, & Matthew Zurek.  
+  Preprint, 2026.  Minor revision in Stochastic Systems.  
   [arxiv](https://arxiv.org/abs/2607.22580)
 2. **Lyapunov-Based Sample Complexity Analysis for Weakly-Coupled MDPs**  
   Tianhao Wu, Matthew Zurek, Weina Wang, & Qiaomin Xie.  
@@ -53,7 +60,7 @@ I am a CS PhD candidate at the University of Wisconsin--Madison. My research foc
   [arxiv](https://arxiv.org/abs/2308.15642) · [proceedings](https://proceedings.mlr.press/v247/zurek24a.html)
 11. **The Effect of Modeling Human Rationality Level on Learning Rewards from Multiple Feedback Types**  
   Gaurav R. Ghosal\*, Matthew Zurek\*, Daniel S. Brown, Anca Dragan.  
-  *AAAI Conference on Artificial Intelligence*, 2023.  
+  *AAAI Conference on Artificial Intelligence (AAAI)*, 2023.  
   [arxiv](https://arxiv.org/abs/2208.10687) · [proceedings](https://ojs.aaai.org/index.php/AAAI/article/view/25740)
 12. **Situational Confidence Assistance for Lifelong Shared Autonomy**  
   Matthew Zurek\*, Andreea Bobu\*, Daniel S. Brown, Anca Dragan.  
